@@ -12,7 +12,8 @@ public class Pessoa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_pessoa;
+    @Column(name = "id_pessoa")
+    private long idPessoa;
 
     @Column(length = 70, nullable = false)
     private String nome;
@@ -29,21 +30,21 @@ public class Pessoa {
     @Column(name = "status_ativo", nullable = false)
     private Boolean statusAtivo;
 
-    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pessoa")
     private List<AtividadeDiaria> atividades;
 
     @OneToOne(mappedBy = "pessoa", cascade = CascadeType.ALL)
     private ChaveAcesso chaveAcesso;
 
-    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pessoa")
     private List<RegistroPonto> registrosPonto;
 
     public long getId_pessoa() {
-        return id_pessoa;
+        return idPessoa;
     }
 
-    public void setId_pessoa(long id_pessoa) {
-        this.id_pessoa = id_pessoa;
+    public void setIdPessoa(long idPessoa) {
+        this.idPessoa = idPessoa;
     }
 
     public String getEmail() {

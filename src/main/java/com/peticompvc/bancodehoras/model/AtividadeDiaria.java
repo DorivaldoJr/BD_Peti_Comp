@@ -12,7 +12,8 @@ public class AtividadeDiaria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_atividade;
+    @Column(name = "id_atividade")
+    private long idAtividade;
 
     @Column (name = "horas_totais")
     private Duration horasTotais;
@@ -26,4 +27,46 @@ public class AtividadeDiaria {
     @ManyToOne
     @JoinColumn (name = "id_pessoa", nullable = false)
     private Pessoa pessoa;
+
+    public AtividadeDiaria() {}
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
+    public void setDataAtividade(LocalDate dataAtividade) {
+        this.dataAtividade = dataAtividade;
+    }
+
+    public void setHorasTotais(Duration horasTotais) {
+        this.horasTotais = horasTotais;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setIdAtividade(long idAtividade) {
+        this.idAtividade = idAtividade;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public LocalDate getDataAtividade() {
+        return dataAtividade;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Duration getHorasTotais() {
+        return horasTotais;
+    }
+
+    public long getIdAtividade() {
+        return idAtividade;
+    }
 }

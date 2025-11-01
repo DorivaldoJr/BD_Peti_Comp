@@ -13,7 +13,8 @@ public class ChaveAcesso {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_chave;
+    @Column(name ="id_chave")
+    private long idChave;
 
     @Column(name = "valor_chave", length = 100, unique = true, nullable = false)
     private String valorChave;
@@ -49,11 +50,11 @@ public class ChaveAcesso {
         this.valorChave = valorChave;
     }
 
-    public long getId_chave() {
-        return id_chave;
+    public long getIdChave() {
+        return idChave;
     }
 
-    public void setId_chave(long id_chave) {
-        this.id_chave = id_chave;
+    public void setIdChave(long idChave) {
+        this.idChave = idChave;
     }
 }

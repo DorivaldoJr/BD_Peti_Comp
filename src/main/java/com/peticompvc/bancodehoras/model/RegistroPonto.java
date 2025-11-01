@@ -17,7 +17,8 @@ public class RegistroPonto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_registro;
+    @Column(name = "id_registro")
+    private long idRegistro;
 
     @Column(length = 20, nullable = false)
     private String tipo;
@@ -33,4 +34,45 @@ public class RegistroPonto {
     @JoinColumn(name = "id_chave", nullable = false)
     private ChaveAcesso chaveAcesso;
 
+    public RegistroPonto() {}
+
+    public void setChaveAcesso(ChaveAcesso chaveAcesso) {
+        this.chaveAcesso = chaveAcesso;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
+    public void setDataRegistro(Instant dataRegistro) {
+        this.dataRegistro = dataRegistro;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setIdRegistro(long idRegistro) {
+        this.idRegistro = idRegistro;
+    }
+
+    public ChaveAcesso getChaveAcesso() {
+        return chaveAcesso;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public Instant getDataRegistro() {
+        return dataRegistro;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public long getIdRegistro() {
+        return idRegistro;
+    }
 }
