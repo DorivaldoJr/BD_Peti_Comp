@@ -31,3 +31,18 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignorar arquivos do macOS
+.DS_Store
+
+# Ignorar arquivos do IntelliJ
+.idea/
+*.iml
+
+# Ignorar arquivos de build (Maven/Gradle)
+target/
+build/
+
+# Ignorar logs
+*.log
+
