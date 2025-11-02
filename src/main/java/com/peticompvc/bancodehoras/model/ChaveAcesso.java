@@ -1,13 +1,10 @@
 package com.peticompvc.bancodehoras.model;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
-
 
 @Entity
 @Table(name = "chave_acesso")
-
 
 public class ChaveAcesso {
 
