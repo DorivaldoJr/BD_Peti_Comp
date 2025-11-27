@@ -28,4 +28,5 @@ public class BatidaPontoDTO {
 
     public BatidaPontoDTO() {
     }
+
 }
